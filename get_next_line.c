@@ -6,7 +6,7 @@
 /*   By: luigi_streber <luigi_streber@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 22:11:10 by luigi_streb       #+#    #+#             */
-/*   Updated: 2024/09/11 21:43:33 by luigi_streb      ###   ########.fr       */
+/*   Updated: 2024/10/01 14:42:23 by luigi_streb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ static char	*newline_exist(char *str)
 	return (NULL);
 }
 
+//We read content from fd (up to BUFFER_SIZE) and store in stash.
+//Leemos contendido del fd(hasta el tamaño BUFFER_SIZE) y almacenamos en stash.
 static char	*read_file(int fd, char *stash)
 {
 	char	*buff;
@@ -49,6 +51,10 @@ static char	*read_file(int fd, char *stash)
 	return (stash);
 }
 
+//We extract the line from stash and return it.
+//After reading the file, we need to extract the first line (\n).
+//Extraemos la linea de stash y la retornamos.
+//Despues de leer el rchivo, necesitamos  extraer la primera linea (\n).
 static char	*extract_line(char *stash)
 {
 	int		i;
@@ -59,7 +65,7 @@ static char	*extract_line(char *stash)
 		return (NULL);
 	while (stash[i] && stash[i] != '\n')
 		i++;
-	line = malloc((i + 2) * sizeof(char));
+	line = (char *)malloc(sizeof(char) * (i + 2));
 	if (!line)
 		return (NULL);
 	i = 0;
@@ -77,6 +83,10 @@ static char	*extract_line(char *stash)
 	return (line);
 }
 
+//Stash the remainder after extracting the line.
+//Data not yet processed.
+//Guarda lo sobrante en el stash despues de extraer la linea.
+//Datos aun no procesados.
 static char	*save_remainder(char *stash)
 {
 	int		i;
@@ -117,6 +127,11 @@ char	*get_next_line(int fd)
 	if (!stash)
 		return (NULL);
 	line = extract_line(stash);
+	if (!line)
+	{
+		free (stash);
+		return (NULL);
+	}
 	stash = save_remainder(stash);
 	return (line);
 }

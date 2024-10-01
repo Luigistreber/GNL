@@ -6,7 +6,7 @@
 /*   By: luigi_streber <luigi_streber@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 20:24:00 by luigi_streb       #+#    #+#             */
-/*   Updated: 2024/09/11 21:52:13 by luigi_streb      ###   ########.fr       */
+/*   Updated: 2024/10/01 15:00:25 by luigi_streb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ static char	*newline_exist(char *str)
 	return (NULL);
 }
 
+//We read content from fd (up to BUFFER_SIZE) and store in stash.
+//Leemos contendido del fd(hasta el tamaño BUFFER_SIZE) y almacenamos en stash.
 static char	*read_file(int fd, char *stash)
 {
 	char	*buff;
@@ -49,6 +51,10 @@ static char	*read_file(int fd, char *stash)
 	return (stash);
 }
 
+//We extract the line from stash and return it.
+//After reading the file, we need to extract the first line (\n).
+//Extraemos la linea de stash y la retornamos.
+//Despues de leer el rchivo, necesitamos  extraer la primera linea (\n).
 static char	*extract_line(char *stash)
 {
 	int		i;
@@ -77,6 +83,10 @@ static char	*extract_line(char *stash)
 	return (line);
 }
 
+//Stash the remainder after extracting the line.
+//Data not yet processed.
+//Guarda lo sobrante en el stash despues de extraer la linea.
+//Datos aun no procesados.
 static char	*save_remainder(char *stash)
 {
 	int		i;

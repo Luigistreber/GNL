@@ -6,13 +6,15 @@
 /*   By: luigi_streber <luigi_streber@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 22:46:04 by luigi_streb       #+#    #+#             */
-/*   Updated: 2024/09/11 20:32:29 by luigi_streb      ###   ########.fr       */
+/*   Updated: 2024/09/25 22:33:21 by luigi_streb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
-# define BUFFER_SIZE 42
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 32
+# endif
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdio.h>
