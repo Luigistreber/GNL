@@ -6,13 +6,13 @@
 /*   By: luigi_streber <luigi_streber@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 19:40:04 by luigi_streb       #+#    #+#             */
-/*   Updated: 2024/09/11 21:10:56 by luigi_streb      ###   ########.fr       */
+/*   Updated: 2024/10/01 12:06:39 by luigi_streb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "get_next_line.h"
-#include "get_next_line_bonus.h"
-/*
+#include "get_next_line.h"
+//#include "get_next_line_bonus.h"
+
 int	main(int argc, char **argv)
 {
 	int		fd;
@@ -36,9 +36,9 @@ int	main(int argc, char **argv)
 	}
 	close(fd);
 	return (0);
-}*/
+}
 
-
+/*
 int	main(int argc, char **argv)
 {
 	if (argc < 2)
@@ -64,4 +64,4 @@ int	main(int argc, char **argv)
 		close(fd);
 	}
 	return (0);
-}
+}*/

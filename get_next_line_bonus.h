@@ -6,13 +6,15 @@
 /*   By: luigi_streber <luigi_streber@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 20:22:13 by luigi_streb       #+#    #+#             */
-/*   Updated: 2024/09/11 20:50:31 by luigi_streb      ###   ########.fr       */
+/*   Updated: 2024/09/25 22:33:43 by luigi_streb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_BONUS_H
 # define GET_NEXT_LINE_BONUS_H
-# define BUFFER_SIZE 42
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 32
+# endif
 # define MAX_OPEN_FILE 1024
 # include <stdlib.h>
 # include <unistd.h>

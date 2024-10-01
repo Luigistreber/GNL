@@ -6,7 +6,7 @@
 /*   By: luigi_streber <luigi_streber@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 22:41:56 by luigi_streb       #+#    #+#             */
-/*   Updated: 2024/09/11 21:49:28 by luigi_streb      ###   ########.fr       */
+/*   Updated: 2024/10/01 12:10:09 by luigi_streb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,3 +87,5 @@ char	*ft_strjoin(char *s1, char *s2)
 	free(s1);
 	return (s3);
 }
+//ft_strjoin --> Concatena dos cadenas en una nueva cadena.
+//Copia s1 en s3 con ft_strncpy y luego concatena s2 en s3 con ft_strncat.
